@@ -12,4 +12,14 @@ router.get('/', async function(req, res, next) {
   }
 });
 
+router.post('/', async function(req, res, next) {
+  res.send("POST Request Called!");
+  try { 
+    res.json(await programmingLanguages.writeNewDLC(req.body));
+  } catch (err) {
+    console.error(`Error while writing new record `, err.message);
+    next(err);
+  }
+});
+
 module.exports = router;
