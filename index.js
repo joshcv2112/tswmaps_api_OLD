@@ -17,8 +17,8 @@ app.get("/", (req, res) => {
 
 app.use("/programming-languages", programmingLanguagesRouter);
 app.use("/gameplay-packs", gameplayPacksRouter);
-/* Error handler middleware */
 
+/* Error handler middleware */
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   console.error(err.message, err.stack);
