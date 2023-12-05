@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const gameplayPacksRouter = require("./routes/gameplayPacks");
+const locoDLCsRouter = require("./routes/locoDLCs");
 
 app.use(express.json());
 app.use(
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/gameplay-packs", gameplayPacksRouter);
+app.use('/loco-dlcs', locoDLCsRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

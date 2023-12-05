@@ -4,7 +4,7 @@ const helper = require('../helper');
 /**
  * Gets all of the gameplay pack objects from the DB
  */
-async function getMultiple(){
+async function getGameplayPacks() {
   const query = `SELECT gameplayPackDLCs.id, gameplayPackDLCs.acronym, gameplayPackDLCs.name, gameplayPackDLCs.nameShort,
   gameplayPackDLCs.nameLong, gameplayPackDLCs.nameAlternate, gameplayPackDLCs.locale, gameplayPackDLCs.releaseDate,
   countries.name AS country,
@@ -47,6 +47,10 @@ async function writeNewGameplayPack(body) {
   await db.query(query);
 }
 
+/**
+ * Given the id of a gameplay pack, will update the existing record to match the request body.
+ * @param {*} body 
+ */
 async function updateGameplayPack(body) {
   console.log('UPDATING EXISTING RECORD');
 
@@ -70,7 +74,7 @@ async function updateGameplayPack(body) {
 }
 
 module.exports = {
-  getMultiple,
+  getGameplayPacks,
   writeNewGameplayPack,
   updateGameplayPack
 }

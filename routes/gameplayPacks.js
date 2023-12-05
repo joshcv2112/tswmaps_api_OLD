@@ -5,7 +5,7 @@ const gameplayPacks = require('../services/gameplayPacks');
 /* GET gameplay packs */
 router.get('/', async function(req, res, next) {
   try {
-    res.json(await gameplayPacks.getMultiple());
+    res.json(await gameplayPacks.getGameplayPacks());
   } catch (err) {
     console.error(`Error while getting gameplay packs`, err.message);
     next(err);
