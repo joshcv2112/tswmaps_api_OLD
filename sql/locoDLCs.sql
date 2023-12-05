@@ -1,4 +1,4 @@
-CREATE TABLE `tswmaps2_svelte_dev`.`gameplayPackDLCs` (
+CREATE TABLE `tswmaps2_svelte_dev`.`locoDLCs` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `acronym` VARCHAR(45) NULL,
   `name` VARCHAR(100) NULL,

@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const programmingLanguagesRouter = require("./routes/programmingLanguages");
 const gameplayPacksRouter = require("./routes/gameplayPacks");
 
 app.use(express.json());
@@ -15,7 +14,6 @@ app.get("/", (req, res) => {
   res.json({ message: "ok" });
 });
 
-app.use("/programming-languages", programmingLanguagesRouter);
 app.use("/gameplay-packs", gameplayPacksRouter);
 
 /* Error handler middleware */
