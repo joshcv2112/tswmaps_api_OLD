@@ -43,10 +43,11 @@ async function writeNewLocoDLC(body) {
  */
 async function updateLocoDLC(body) {
     console.log('Updating existing Loco DLC record');
-
+    
     // define sql query string
     let query = `UPDATE \`tswmaps2_svelte_dev\`.\`locoDLCs\` SET `;
 
+    
     // Add each property in the request body to the query (except id)
     for (const property in body) {
         if (property !== 'id') {
